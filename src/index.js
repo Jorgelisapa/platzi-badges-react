@@ -16,4 +16,10 @@ import Badge from './components/Badge'
 
 const container = document.getElementById('app');
 
-ReactDOM.render(<Badge />, container);
+ReactDOM.render(<Badge 
+    firstName='Jota' 
+    lastName='Salamanca'
+    jobTitle='FrontEnd'
+    twitter='Jorgelisapa'
+    hash='#PlatziConf2020'
+    />, container);
