@@ -128,7 +128,7 @@ Pasa cuando los componentes sufren un cambio. Cuando estos se actualizan se ejec
 
 * ```componentWillUnmount()```:Este método es llamado cuando un componente se elimina del DOM
 
-ReactDOM.render: Pide un elemento, es de recordar que un componente es ```Componente``` y un elemento se representa ```<Elemento />```
+ReactDOM.render: Pide un elemento, es de recordar que un componente es un```Componente``` y un elemento se representa ```<Elemento />```
 Quedaría así: 
 
 ```ReactDOM.render(<elemento />, container);```
