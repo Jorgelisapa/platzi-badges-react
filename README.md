@@ -140,3 +140,89 @@ En React tenemos los **props** que es la forma corta de properties **son argumen
 
 Estos props salen de una variable de la clase que se llama this.props y los valores son asignados directamente en el ReactDOM.render().
 
+## Enlazando eventos - v14
+
+### input tiene *onChange={this.handleChange}*
+React dispone de **eventos**. Cada vez que se recibe información en un input se obtiene un evento ```onChange``` y se maneja con un método de la clase ```this.handleChange```.
+
+Ejemplo:
+
+```
+<input onChange={this.handleChange} className='form-control' type="text" name='firstName'/>
+```
+Para ello hay que crear el metodo que recibe el evento y podremos ver el valor:
+```
+    handleChange = reciveEvento => {
+        console.log({ reciveEvento});
+    }
+```
+De este modo registrará un evento en cada tecleo sin mostrar valor ingresado.
+
+Si queremos ver el valor de lo que estamos escribiendo debemos escribir:
+```
+    handleChange = reciveEvento => {
+        console.log({ value: reciveEvento.target.value });
+    }
+```
+
+Otro valor que vale la pena saber es el ```name``` del input que causó este evento.
+
+```
+handleChange = reciveEvento => {
+        console.log({ 
+            name: reciveEvento.target.name,
+            value: reciveEvento.target.value 
+        });
+    }
+```
+
+### button - *onClick={this.hadleClick}*
+Los elementos button también tienen un evento que es **onClick**.
+
+
+Ejemplo: 
+```
+<button onClick={this.handleClick} className="btn btn-primary">Save</button>
+```
+Para ello hay que crear el metodo que recibe el evento, excepto que esta vez no hay ```value``` ni un ```name```. Solo podemos decir que algo sucedió.
+
+```
+    handleClick = reciveEventoClick => {
+        console.log('Button was Clicked');
+    };
+```
+De este modo intentará enviar, recargará la pagina y borrara lo que se hábia escrito.
+Cuando hay un botón dentro de un formulario, este automáticamente será de tipo **submit**. Si no queremos que pase así hay dos maneras de evitarlo: especificando que su valor es de tipo **button** o manejándolo desde el formulario cuando ocurre el evento **onSubmit**.
+```
+    <button 
+    type='button' 
+    onClick={this.handleClick} 
+    className="btn btn-primary">
+        Save
+    </button>
+```
+Ahora ```onSubmit```
+```
+    <form onSubmit={this.handleSubmit}>
+        ...
+    </form>
+```
+
+Para ello hay que crear el metodo que recibe el evento. Si nosotros NO queremos que ese formulario se envíe tenemos que hacer el ```.preventDefault();``` del evento.
+
+```
+    handleSubmit = reciveEventoSubmit => {
+        reciveEventoSubmit.preventDefault();
+        console.log("Form was submitted")
+    };
+```
+Y en el button:
+```
+    <button 
+    type='submit'  //propiedad por defecto 
+    onClick={this.handleClick} 
+    className="btn btn-primary">
+        Save
+    </button>
+```
+
