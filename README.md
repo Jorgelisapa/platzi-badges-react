@@ -225,4 +225,45 @@ Y en el button:
         Save
     </button>
 ```
+Todo esto se llama **enlazar eventos**. Estamos conectando la accion que esta haciendo el usuario con los componentes de react.
+ 
+## Manejo del estado
 
+Hasta esta clase todos los componentes han obtenido su información *a través de props que vienen desde afuera* (otros componentes) pero hay otra manera en la que los componentes pueden producir su propia información y guardarla para ser consumida o pasada a otros componentes a través de sus props. La clave está en que la información del **state** a otros componentes pasará en una sola dirección y podrá ser consumida pero no modificada.
+
+Para guardar la información en el estado se usa una **función de la clase component llamada ```setState```** a la cual se le debe pasar un objeto con la información que se quiere guardar.
+
+```
+    handleChange = e => {
+        this.setState({
+            firstName: e.target.value,
+        })
+    };
+    // e es = a reciveEvento, abreviado
+```
+De este modo cada uno de los campos llamará a un solo input, es este caso firstName y eso representa un problema, así que tenemos que hacer que cada espacio guarde su información con algo como ```[e.target.name]``` que recibira el evento y permitirá guardar la información según el ```name``` del campo.
+```
+this.setState({
+    [e.target.name]: e.target.value,
+    });
+};
+```
+Aunque no se ve, la información está siendo guardada en dos sitios. Cada input guarda su propio valor y al tiempo la está guardando en ```setState```, lo cual no es ideal. Para solucionarlo hay que modificar los inputs de un estado de no controlados a controlados. Esto lo logramos pasandole un prop adicional a cada input llamado ```value``` el cual tendra que leer del state y lo hace con ```this.state``` en este caso leyendo un input llamado 'firstName' (par escribirlo se usa ```this.setState```) y así para cada uno de los inputs solo cambiando su name.
+```
+value={this.state.firstName}
+```
+De este modo es muy posible que de error ya que intenta leer el estado de estos pero primero es necesario inicializarlo. Esto lo podemos hacer en cualquier linea de nuestro componente (preferiblemente en la primera del componente) con un objeto vacío, así:
+```
+state = {};
+```
+Tambien podemos inicializar el estado con un valor por defecto como por ejemplo: 
+```
+state = {jobTitle: 'Designer',};
+```
+con lo que su estado siempre se inicializara con 'designer' pudiendose cambiar. Esto es gracias a tener el estado de los imput en modo controlado.
+
+CONCLUCIÓN: 
+* **setState:** Se usa para escribir el estado
+* **state:** Se usa para leer el estado.
+
+Esto es algo importantisimo en todo lo hecho en react.
