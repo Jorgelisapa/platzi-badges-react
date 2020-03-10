@@ -136,7 +136,7 @@ Quedaría así:
 ```ReactDOM.render(__qué__, __dónde__);```
 
 ## Props - v12
-En React tenemos los **props** que es la forma corta de properties **son argumentos de una función** y en este caso serán los atributos de nuestro componente como class, src, etc. Estos vienen siendo sus análogos en HTML
+En React tenemos los **props** que es la forma corta de properties **son argumentos de una función** y en este caso serán los atributos de nuestro componente como class, src, etc. Estos vienen siendo sus análogos en HTML. atributos == props
 
 Estos props salen de una variable de la clase que se llama this.props y los valores son asignados directamente en el ReactDOM.render().
 
