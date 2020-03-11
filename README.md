@@ -267,3 +267,52 @@ CONCLUCIÓN:
 * **state:** Se usa para leer el estado.
 
 Esto es algo importantisimo en todo lo hecho en react.
+
+## Levantamiento del estado - v16
+
+Levantar el estado es una técnica de React que *pone el estado en una localización donde se le pueda pasar como props a los componentes*. Lo ideal es poner el estado en el lugar más cercano a todos los componentes que quieren compartir esa información.
+
+En el caso de este proyecto queremos compartir el estado del form con el BadgeNew, para ello hay que poner el estado al nivel de la pagina que es donde está el BadgeNew y el BadgeForm.
+
+Forma 1: Se hace una copia del estado del form, igualarlo al estado actual, luego editarlo diciendo que nextForm va tener el valor en la llave que va ser igual al siguiente valor, paraa luego a form asignarle nextForm.
+```
+    state = { form: {} };
+
+    handleChange = e => {
+        const nextForm = this.state.form
+        nextForm[e.target.name] = e.target.value;
+
+        this.setState({
+            form: nextForm,
+        });
+    };
+```
+Forma 2: Dejando caer todo los valores que tenia el form anteriormente y añadirle uno nuevo o sobreescribimos el que ya estaba guardado.
+```
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: = e.target.value;
+
+            },
+        });
+    };
+```
+Aun cuando los datos ingresados en el formulario no se sobreescriben, se siguen perdiendo/borrando, aquí ya no debe ser BadgeForm que guarde el state sino BadgeNew.
+
+Cuando la consola da un Warning de que un componente paso de ser controlado a no controlado se soluciona inicilizando los valores del formulario a un string vacio:
+```
+    state = { form: {
+        firstName: '',
+        lastName: '',
+        twitter: '',
+        jobTitle: '',
+    } };
+```
+
+Algo interesante que le da el nombre a React es su parte de “reactivo” ya que cada vez que hay un cambio en el estado o en los props que recibe un componente se vuelve a renderizar todo el componente y todos sus descendientes. Entonces, cada vez que el ```state``` cambia, va cambiar BadgeNew porque se va volver a renderizar y junto a el, BadgeForm.
+
+Ahora para que los cambios hechos en el form se rendericen en el Badge en tiempo real, solo tendremos que en lugar de dejarle unos valores en comcreto le compartamos el estado del form al badge.
+
+Ahora tenemos la informacion del formulario en un lugar/posición en donde se permite compartir a más de un componente, movimos el estado del BadgeForm a la pagina BadgeNew quien ahora le está compartiendo esa información al Badge y al BadgeForm o Formulario. Tecnica usada constantemente mientras vamos ajustando nuestras aplicaciones y haciendo la información disponible a más partes/componentes.
+
