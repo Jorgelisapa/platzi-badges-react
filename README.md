@@ -362,3 +362,30 @@ import { Redirect, Route } from "react-router-dom";
 <Route path="/404" component={MiComponente404} />
 <Redirect from="*" to="/404" />
 Como podemos observar llamamos a nuestro componente 404 y luego utilizamos Redirect, el cual es un componente de React Router para hacer redirecciones; en este caso hacemos que todas las URL’s que no correspondan a alguna que hayamos declarado, sean redirigidas a MiComponente404.
+
+## Introducción ciclo de vida de un componente
+* Cuando React renderiza los componentes decimos que entran en escena, 
+* Cuando su estado cambia o recibe unos props diferentes se actualizan y 
+* Cuando cambiamos de página se dice que se desmontan.
+
+-
+
+* Montaje:
+
+Representa el momento donde se inserta el código del componente en el DOM.
+Se llaman tres métodos: 
+    * constructor: inicializa estado, valores...
+    * render: introduce el elemento y lo muestra
+    * componentDidMount: 
+* Actualización:
+
+Ocurre cuando los props o el estado del componente cambian.
+Se llaman dos métodos:
+    * render
+    * componentDidUpdate: recibe dos argumentos, los props y el estado que tenia anteriormente.
+
+* Desmontaje:
+
+Nos da la oportunidad de hacer limpieza de nuestro componente.
+Se llama un método: 
+    * componentWillUnmount
