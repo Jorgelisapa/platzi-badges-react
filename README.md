@@ -316,3 +316,37 @@ Ahora para que los cambios hechos en el form se rendericen en el Badge en tiempo
 
 Ahora tenemos la informacion del formulario en un lugar/posición en donde se permite compartir a más de un componente, movimos el estado del BadgeForm a la pagina BadgeNew quien ahora le está compartiendo esa información al Badge y al BadgeForm o Formulario. Tecnica usada constantemente mientras vamos ajustando nuestras aplicaciones y haciendo la información disponible a más partes/componentes.
 
+## React router - v18
+
+Las aplicaciones que se trabajan en React son llamadas ***single page apps***. Esto es posible gracias a **React Router** que es una **librería Open Source.**
+
+* **Multi Page Apps**: Cada página implica una petición al servidor. La respuesta usualmente tiene todo el contenido de la página.
+
+* **Single Page Apps (SPA)**: Aplicaciones que cargan una sola página de HTML y cualquier actualización la hacen re-escribiendo el HTML que ya tenían.
+
+* **React Router (v4)**: Nos da las herramientas para poder hacer SPA fácilmente. Usaremos 4 componentes:
+
+    * **BrowserRouter**: es un componente que debe estar siempre lo más arriba de la aplicación. Todo lo que esté adentro funcionará como una SPA.
+    * **Route**: 
+        * Cuando hay un match con el **path**, se hace render del **component**. 
+        * El component va a recibir tres props: **match, history, location.**
+    * **Switch**: 
+        * Dentro de Switch solamente van elementos de Route. 
+        * Switch se asegura que solamente un Route se renderize.
+    * **Link**: 
+        * Toma el lugar del elemento < a >,
+        * evita que se recargue la página completamente y 
+        * actualiza la URL.
+
+## División de la aplicación en rutas
+Lo primero es instalar react router, para instalar versiones antiguas se especifica al final del comando.
+
+Más reciente:
+```
+npm i react-router-dom
+```
+Anterior (usada en este proyecto):
+```
+npm i react-router-dom@4.3.1
+```
+* **Link** internamente tiene un elemento < a > pero va a interceptar el clic para navegar de manera interna sin refrescar toda la página.

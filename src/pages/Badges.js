@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../pages/styles/Badges.css';
 
@@ -61,7 +62,12 @@ class Badges extends Component {
                 </div>
                 <div className='Badges__container' >
                     <div className='Badges__buttons' >
-                        <a className='btn btn-primary' href="/badges/new">New Badge</a>
+                        <Link 
+                        className='btn btn-primary' 
+                        to='/badges/new' 
+                        >
+                            New Badge
+                        </Link>
                     </div>
                     <div className='Badges__list' >
                         <div className='Badges__container' >
