@@ -339,7 +339,7 @@ Las aplicaciones que se trabajan en React son llamadas ***single page apps***. E
         * actualiza la URL.
 
 ## División de la aplicación en rutas
-Lo primero es instalar react router, para instalar versiones antiguas se especifica al final del comando.
+Lo primero es instalar react router dom, para instalar versiones antiguas se especifica al final del comando.
 
 Más reciente:
 ```
@@ -350,3 +350,15 @@ Anterior (usada en este proyecto):
 npm i react-router-dom@4.3.1
 ```
 * **Link** internamente tiene un elemento < a > pero va a interceptar el clic para navegar de manera interna sin refrescar toda la página.
+
+## Mejorando la user interface con un Layout - v20
+
+**React.Fragment** es la herramienta que te ayudará a renderizar varios componentes y/o elementos sin necesidad de colocar un div o cualquier otro elemento de HTML para renderizar sus hijos. Al usar esta característica de React podremos renderizar un código más limpio y legible, ya que ``React.Fragment` no se renderiza en el navegador.
+
+Otra forma de hacer que todas tus URL’s que no existan sean redirigidas a tu componente de 404 sería de la siguiente forma:
+
+import { Redirect, Route } from "react-router-dom";
+
+<Route path="/404" component={MiComponente404} />
+<Redirect from="*" to="/404" />
+Como podemos observar llamamos a nuestro componente 404 y luego utilizamos Redirect, el cual es un componente de React Router para hacer redirecciones; en este caso hacemos que todas las URL’s que no correspondan a alguna que hayamos declarado, sean redirigidas a MiComponente404.
