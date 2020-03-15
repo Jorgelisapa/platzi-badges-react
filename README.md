@@ -389,3 +389,10 @@ Se llaman dos métodos:
 Nos da la oportunidad de hacer limpieza de nuestro componente.
 Se llama un método: 
     * componentWillUnmount
+
+## Introducción llamadas a un API
+Las llamadas a una API siguen un patrón similar siempre que las hacemos, cada llamada consta de tres estados:
+
+* **Loading**: cuando la petición se envía y estamos esperando.
+* **Error**: se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
+* **Data**: los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
