@@ -396,3 +396,9 @@ Las llamadas a una API siguen un patrón similar siempre que las hacemos, cada l
 * **Loading**: cuando la petición se envía y estamos esperando.
 * **Error**: se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
 * **Data**: los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
+
+## Enviando datos (POST) v27
+Gravatar usa el md5 de nuestro email, así que instala remos la librería de MD5
+```
+npm i md5
+```

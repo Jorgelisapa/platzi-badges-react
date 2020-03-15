@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../pages/styles/Badges.css';
-
 import BadgesList from '../components/BadgesList';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 
 import confLogo from '../images/badge-header.svg';
 
-import api from './api';
+import api from '../api';
 
 class Badges extends Component {
 
