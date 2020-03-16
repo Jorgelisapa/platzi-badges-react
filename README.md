@@ -402,3 +402,15 @@ Gravatar usa el md5 de nuestro email, así que instala remos la librería de MD5
 ```
 npm i md5
 ```
+
+## UI components y container components - v32'
+
+En la programación es bueno separar las tareas en diferentes funciones y en React sucede lo mismo. Cuando un componente hace demasiado, probablemente es mejor dividirlo en dos.
+
+Esta técnica de componentes presentacionales y componentes container es común, útil y hace parte de las buenas prácticas.
+
+## Portales
+
+Hay momentos en los que queremos renderizar un **modal, un tooltip, etc**. Esto puede volverse algo complicado ya sea por la presencia de un **z-index o un overflow hidden**.
+
+En estos casos lo ideal será renderizar en un nodo completamente aparte y para esto React tiene una herramienta llamada **Portales** que funcionan parecido a ReactDOM.render; se les dice qué se desea renderizar y dónde, con la diferencia de que ese dónde puede ser fuera de la aplicación.
