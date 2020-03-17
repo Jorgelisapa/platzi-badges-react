@@ -432,3 +432,6 @@ React tiene un feature llamado **Hooks** que permite que las funciones también 
 **Custom Hooks**: Usamos los hooks fundamentales para crear nuevos hooks custom. Estos hooks irán en su propia función y su nombre comenzará con la palabra use. Otra de sus características es que no pueden ser ejecutados condicionalmente (if).
 
 * useState regresa un arreglo de dos argumentos.
+
+## Search filter con Hooks
+
