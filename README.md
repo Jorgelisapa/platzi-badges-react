@@ -414,3 +414,7 @@ Esta técnica de componentes presentacionales y componentes container es común,
 Hay momentos en los que queremos renderizar un **modal, un tooltip, etc**. Esto puede volverse algo complicado ya sea por la presencia de un **z-index o un overflow hidden**.
 
 En estos casos lo ideal será renderizar en un nodo completamente aparte y para esto React tiene una herramienta llamada **Portales** que funcionan parecido a ReactDOM.render; se les dice qué se desea renderizar y dónde, con la diferencia de que ese dónde puede ser fuera de la aplicación.
+
+## Modales
+
+La técnica de usar componentes genéricos para crear uno nuevo especializado se llama composición y es una herramienta que todo buen programador debe saber utilizar.
