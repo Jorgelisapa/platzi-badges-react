@@ -19,6 +19,21 @@ npm i
 npm run start
 ```
 
+## - 📫 How to reach me:
+
+<a href="https://twitter.com/jorgelisapa">
+  <img align="left" alt="Jorgelisapa Twitter" target="_blank" width="30px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />
+</a>
+<a href="https://www.linkedin.com/in/jorgelisapa/">
+  <img align="left" alt="Jorgelisapa Linkdein" target="_blank" width="30px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+</a>
+<a href="https://github.com/Jorgelisapa">
+  <img align="left" alt="Jorgelisapa Github" target="_blank" width="30px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />
+</a>
+<a href="https://gitlab.com/Jorgelisapa">
+  <img align="left" alt="Jorgelisapa Github" target="_blank" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Font_Awesome_5_brands_gitlab.svg/512px-Font_Awesome_5_brands_gitlab.svg.png" />
+</a>
+
 ## Screenshots
 <img align="" width='900px' alt="" src="https://github.com/Jorgelisapa/platzi-badges-react/blob/1.ReactDOM.render/screenshots/platzi-badges-1.png" />
 <img align="" width='900px' alt="" src="https://github.com/Jorgelisapa/platzi-badges-react/blob/1.ReactDOM.render/screenshots/platzi-badges-2.png" />
