@@ -34,6 +34,8 @@ npm run start
   <img align="left" alt="Jorgelisapa Github" target="_blank" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Font_Awesome_5_brands_gitlab.svg/512px-Font_Awesome_5_brands_gitlab.svg.png" />
 </a>
 
+<br />
+
 ## Screenshots
 <img align="" width='900px' alt="" src="https://github.com/Jorgelisapa/platzi-badges-react/blob/1.ReactDOM.render/screenshots/platzi-badges-1.png" />
 <img align="" width='900px' alt="" src="https://github.com/Jorgelisapa/platzi-badges-react/blob/1.ReactDOM.render/screenshots/platzi-badges-2.png" />
